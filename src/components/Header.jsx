@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-const Header = () => {
+const Header = ({ callback }) => {
   const [searchMovie, setSearchMovie] = useState("");
   return (
     <header className="header">

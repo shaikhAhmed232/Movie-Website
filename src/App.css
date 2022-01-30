@@ -1,16 +1,39 @@
+body {
+  background: rgba(255, 255, 255, 0.3);
+}
 .header input {
   width: 100%;
 }
 
 .header .header-container {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .header a h2 {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
   margin: 0 auto;
 }
 
 .header a h2:hover {
   color: white;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  height: 20rem;
+  color: white;
+}
+
+.card img {
+  height: 60%;
+}
+
+.card-body a {
+  text-decoration: none;
+  color: white;
+}
+
+.card-body a:hover {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.7);
 }
