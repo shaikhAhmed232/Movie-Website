@@ -50,3 +50,50 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.navbar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem !important;
+  background: transparent !important;
+}
+
+.nav {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+.nav-item {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 50%;
+}
+
+@media (max-width: 996px) {
+  .nav {
+    width: 50%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.nav-link {
+  color: white;
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.7);
+}
