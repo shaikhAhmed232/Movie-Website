@@ -20,7 +20,7 @@ body {
 
 .card {
   background: rgba(0, 0, 0, 0.7);
-  height: 20rem;
+  height: 25rem;
   color: white;
 }
 
@@ -31,9 +31,22 @@ body {
 .card-body a {
   text-decoration: none;
   color: white;
+  font-size: 0.8rem;
 }
 
 .card-body a:hover {
   text-decoration: underline;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.card-body .rating {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.paginate {
+  display: flex;
+  justify-content: center;
 }

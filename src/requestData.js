@@ -1,8 +1,9 @@
-import reqInstance from "./axiosMng";
+import axios from "axios"
 
-const movieData = async (fetchUrl) => {
-  const { data } = await reqInstance.get(fetchUrl);
-  return data.results;
+const movieData = async (fetchUrl, settingData, settingTotalPages) => {
+  const { data } = await axios.get(fetchUrl);
+  settingTotalPages(data.total_pages)
+  settingData(data.results);
 };
 
 export default movieData;
