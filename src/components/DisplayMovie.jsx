@@ -4,6 +4,7 @@ import MovieCard from "./MovieCard";
 import movieData from "../requestData";
 import Pagination from "./Pagination";
 import Genres from "./Genres"
+import useGenres from "../CustomHooks/useGenres";
 
 const DisplayMovie = ({ fetchingUrl, fetchGenresList }) => {
   const [movies, setMovies] = useState([]);
@@ -11,12 +12,13 @@ const DisplayMovie = ({ fetchingUrl, fetchGenresList }) => {
   const [genres, setGenres] = useState([])
   const [totalPages, setTotalPages] = useState(0)
   const [loading, setLoading] = useState(false)
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(1)
+  const genresForUrl = useGenres(selectedGenres)
   useEffect(() => {
     setLoading(true)
-    movieData(`${fetchingUrl}&page=${page+1}`, setMovies, setTotalPages);
+    movieData(`${fetchingUrl}&page=${page+1}&with_genres=${genresForUrl}`, setMovies, setTotalPages);
     setLoading(false)
-  }, [fetchingUrl,page]);
+  }, [fetchingUrl,page, genresForUrl]);
 
   return (
     <>
