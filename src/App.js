@@ -26,7 +26,12 @@ function App() {
           />
           <Route
             path="tvseries"
-            element={<TvSeries fetchGenresList={requests.fetchTvGenresList} />}
+            element={
+              <TvSeries
+                fetchingUrl={requests.fetchTvSeries}
+                fetchGenresList={requests.fetchTvGenresList}
+              />
+            }
           />
         </Routes>
         <Navbar />
