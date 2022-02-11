@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 
 import MovieCard from "./MovieCard";
 import movieData from "../requestData";
 import Pagination from "./Pagination";
+import Genres from "./Genres"
 
-const DisplayMovie = ({ fetchingUrl }) => {
+const DisplayMovie = ({ fetchingUrl, fetchGenresList }) => {
   const [movies, setMovies] = useState([]);
+  const [selectedGenres, setSelectedGenres] = useState([])
+  const [genres, setGenres] = useState([])
   const [totalPages, setTotalPages] = useState(0)
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(0)
@@ -14,15 +17,17 @@ const DisplayMovie = ({ fetchingUrl }) => {
     movieData(`${fetchingUrl}&page=${page+1}`, setMovies, setTotalPages);
     setLoading(false)
   }, [fetchingUrl,page]);
+
   return (
     <>
       <div className="container">
-        <div className="row justify-content-center py-md-5 py-0">
+        <Genres fetchGenresList={fetchGenresList} selectedGenres = {selectedGenres} setSelectedGenres = {setSelectedGenres} genres = {genres} setGenres = {setGenres} setPage={setPage} />
+        <div className="row justify-content-center py-md-3 py-0">
           {
             loading ? <h3>Loading ...</h3> : (movies ? (
               movies.map((movie) => {
                 return (
-                  <div className="col-lg-3 col-sm-4 col-6 py-3">
+                  <div className="col-lg-3 col-md-4 col-sm-6 col-8 py-3">
                     <MovieCard
                       {...movie}
                       title={movie.title ? movie.title : movie.name}

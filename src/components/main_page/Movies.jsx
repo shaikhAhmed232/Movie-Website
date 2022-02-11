@@ -1,8 +1,8 @@
 import React from "react"
 import DisplayMovie from "../DisplayMovie";
-const Movies = ({fetchingUrl}) => {
+const Movies = ({fetchingUrl, fetchGenresList}) => {
   return (<div>
-      <DisplayMovie fetchingUrl={fetchingUrl} />
+      <DisplayMovie fetchingUrl={fetchingUrl} fetchGenresList={fetchGenresList} />
   </div>);
 };
 
