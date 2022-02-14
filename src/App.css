@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   background: rgba(255, 255, 255, 0.3);
 }
@@ -31,19 +38,12 @@ body {
   color: white;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card img {
   height: 80%;
-}
-
-.card-body a {
-  text-decoration: none;
-  color: white;
-  font-size: 0.8rem;
-}
-
-.card-body a:hover {
-  text-decoration: underline;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .card-body .rating {
@@ -92,7 +92,7 @@ body {
 
 /* ----- Pagination ------ */
 
-/*----- Nabar -----*/
+/*----- Navbar -----*/
 
 .navbar {
   position: sticky;
@@ -128,6 +128,7 @@ body {
   .nav {
     width: 100%;
     text-align: center;
+    z-index: -1;
   }
 }
 
@@ -142,7 +143,7 @@ body {
   color: rgba(0, 0, 0, 0.7);
 }
 
-/*----- Nabbar -----*/
+/*----- Navbar -----*/
 
 /* ----- Genre section ----- */
 
@@ -184,3 +185,67 @@ body {
   }
 }
 /* ----- Genre section ----- */
+
+/* Movie Info section */
+.movie-info-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-info-container {
+  background: white;
+  width: 80%;
+  min-height: 500px;
+  display: flex;
+}
+
+.img-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container img {
+  width: 80%;
+  max-height: 400px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .movie-info-container {
+    flex-direction: column;
+  }
+  .img-container {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .movie-info-buttons {
+    flex-direction: column !important;
+  }
+
+  .movie-info-buttons a {
+    margin: 0.8rem 0;
+  }
+}
+
+/* carousel */
+
+.carousel-body {
+  display: flex;
+  overflow: hidden;
+  width: 50%;
+}
+
+/* Movie Info section */

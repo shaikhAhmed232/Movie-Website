@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Movies from "./components/main_page/Movies";
 import TvSeries from "./components/main_page/TvSeries";
 import Navbar from "./components/Navbar";
+import MovieInfo from "./components/main_page/MovieInfo";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
             }
           />
           <Route
-            path="tvseries"
+            path="/tvseries"
             element={
               <TvSeries
                 fetchingUrl={requests.fetchTvSeries}
@@ -33,6 +34,7 @@ function App() {
               />
             }
           />
+          <Route path="/movieInfo" element={<MovieInfo />} />
         </Routes>
         <Navbar />
       </Router>

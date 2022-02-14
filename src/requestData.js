@@ -1,8 +1,8 @@
-import axios from "axios"
+import axios from "axios";
 
-const movieData = async (fetchUrl, settingData, settingTotalPages) => {
+const movieData = async (fetchUrl, settingTotalPages, settingData) => {
   const { data } = await axios.get(fetchUrl);
-  settingTotalPages(data.total_pages)
+  settingTotalPages(data.total_pages);
   settingData(data.results);
 };
 

@@ -2,7 +2,14 @@ import React from "react";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-const MovieCard = ({ poster_path, title, release_date, vote_average, type }) => {
+const MovieCard = ({
+  poster_path,
+  title,
+  release_date,
+  vote_average,
+  type,
+  id,
+}) => {
   return (
     <div className="card">
       <img
@@ -11,16 +18,12 @@ const MovieCard = ({ poster_path, title, release_date, vote_average, type }) => 
         alt={title}
       ></img>
       <div className="card-body">
-        <a href="#">
-          <h6 className="card-title">{title}</h6>
-          <span>
-            Release Date: {release_date}
-          </span>
-          <div className="rating">
-            <span>{type}</span>
-            <span>Rating: {vote_average}</span>
-          </div>
-        </a>
+        <h6 className="card-title">{title}</h6>
+        <span>Release Date: {release_date}</span>
+        <div className="rating">
+          <span>{type}</span>
+          <span>Rating: {vote_average}</span>
+        </div>
       </div>
     </div>
   );
