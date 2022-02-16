@@ -5,13 +5,7 @@ import { faYoutube, faGoogle } from "@fortawesome/free-brands-svg-icons";
 const base_url = "https://image.tmdb.org/t/p/original/";
 const youtube_url = "https://www.youtube.com/watch";
 
-const MovieInfo = ({
-  movieId,
-  displayInfo,
-  setDisplayInfo,
-  mediaType,
-  setMovieInfo,
-}) => {
+const MovieInfo = ({ movieId, setDisplayInfo, mediaType }) => {
   const [content, setContent] = useState({});
   const [video, setVideo] = useState();
 

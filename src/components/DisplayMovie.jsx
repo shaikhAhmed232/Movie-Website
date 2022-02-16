@@ -38,6 +38,7 @@ const DisplayMovie = ({ fetchingUrl, fetchGenresList }) => {
       setTotalPages,
       setMovies
     );
+
     setLoading(false);
   }, [fetchingUrl, page, genresForUrl]);
 
@@ -52,6 +53,7 @@ const DisplayMovie = ({ fetchingUrl, fetchGenresList }) => {
           setGenres={setGenres}
           setPage={setPage}
         />
+
         <div className="row justify-content-center py-md-3 py-0">
           {loading ? (
             <h3>Loading ...</h3>
