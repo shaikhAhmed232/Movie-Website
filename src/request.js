@@ -1,14 +1,10 @@
 const { REACT_APP_API_KEY } = process.env;
 const requests = {
-  fetchTrending: `/trending/all/day?api_key=${REACT_APP_API_KEY}&language=en-US`,
-  fetchNetflixOriginal: `/discover/tv?api_key=${REACT_APP_API_KEY}&with_networks=213`,
-  fetchTopRated: `/movie/top_rated?api_key=${REACT_APP_API_KEY}&language=eng-US`,
-  fetchActionMovies: `/discover/movie?api_key=${REACT_APP_API_KEY}&with_genres=20`,
-  fetchComedyMovies: `/discover/movie?api_key=${REACT_APP_API_KEY}&with_genres=35`,
-  fetchHorrorMovies: `/discover/movie?api_key=${REACT_APP_API_KEY}&with_genres=27`,
-  fetchRomanceMovies: `/discover/movie?api_key=${REACT_APP_API_KEY}&with_genres=10749`,
-  fetchDocumentaries: `/discover/movie?api_key=${REACT_APP_API_KEY}&with_genres=99`,
-  fetchSearchbyTitle: `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_API_KEY}&query=`,
+  fetchMovies: `
+  https://api.themoviedb.org/3/discover/movie?api_key=${REACT_APP_API_KEY}&language=en-US`,
+  fetchTvSeries: `https://api.themoviedb.org/3/discover/tv?api_key=${REACT_APP_API_KEY}&language=en-US`,
+  fetchMovieGenresList: `https://api.themoviedb.org/3/genre/movie/list?api_key=${REACT_APP_API_KEY}&language=en-US`,
+  fetchTvGenresList: `https://api.themoviedb.org/3/genre/tv/list?api_key=${REACT_APP_API_KEY}&language=en-US`,
 };
 
 export default requests;

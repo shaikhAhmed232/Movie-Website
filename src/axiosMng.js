@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const reqInstance = axios.create({
-  baseURL: "https://api.themoviedb.org/3",
+  baseURL: "",
 });
 
 export default reqInstance;
